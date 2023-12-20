@@ -12,7 +12,7 @@ function CountryCards({ cards }) {
           {cards.map((ele, index) => (
             <Col xs={12} sm={12} md={4} lg={4} xl={4}>
               <Card key={index} className="card">
-                <Card.Img variant="top" src={ele.flags.svg} alt={ele.name.common} className="flag-image"/>
+                <Card.Img variant="top" src={ele.flags.png} alt={ele.name.common} className="flag-image"/>
                 <Card.Body>
                   <Card.Title>{ele.name.common}</Card.Title>
                 </Card.Body>
