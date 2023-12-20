@@ -1,0 +1,21 @@
+.card{
+    width: 15rem;
+    height:10rem;
+    padding: 1.5rem;
+    margin: 1rem;
+    text-align: center;
+}
+
+.flag-image{
+    width: 5rem;
+    height: 7rem;
+}
+.error{
+    text-align: center;
+    color: yellow;
+    font-weight: bolder;
+}
+.loading{
+    text-align: center;
+    color: white;
+}
