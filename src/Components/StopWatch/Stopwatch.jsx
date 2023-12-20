@@ -16,7 +16,9 @@ function Stopwatch() {
   };
 
   const stoper = () => {
+    setisStart(true);
     clearInterval(window.mytimer);
+   
   };
 
   const reseter = () => {
