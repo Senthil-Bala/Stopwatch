@@ -27,9 +27,9 @@ function Stopwatch() {
 
   return (
     <div className="d-flex flex-column justify-content-center align-items-center w-100 h-100 my-4">
-      <h1 className="fw-bolder text-bg-warning">STOPWATCH</h1>
+      <h1 className="fw-bolder text-bg-warning">Stopwatch</h1>
       <div className="timers d-flex justify-content-between align-items-center my-3 text-bg-primary">
-        <h2 className="mx-2">Timer :</h2>
+        <h2 className="mx-2">Time :</h2>
         <h2 className="mx-2">
           {Math.trunc(timer / 60)}:{String(timer % 60).padStart(2,'0')}
         </h2>
