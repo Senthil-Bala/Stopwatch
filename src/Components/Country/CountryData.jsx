@@ -9,6 +9,7 @@ function CountryData() {
   const [countryData, setCountryData] = useState([]);
   const [loading, setLoading] = useState(true); // Set initial loading state to true
   const [errorMessage, setErrorMessage] = useState("");
+  const [search, setsearch] = useState('')
 
   useEffect(() => {
     axios
@@ -30,13 +31,14 @@ function CountryData() {
   return (
     <div>
       <h1 className="text-center m-3">Country App</h1>
+      <input id="search" type="text" placeholder="Search Your Country" value={search} onChange={e=>setsearch(e.target.value)}/>
       <hr />
       {loading ? (
         <h2 className="loading">Loading...</h2>
       ) : (errorMessage ? (
         <h2 className="error">{errorMessage}</h2>
       ) : (
-        <CountryCards cards={countryData} />)
+        <CountryCards cards={countryData} searchValue={search} />)
       )}
     </div>
   );

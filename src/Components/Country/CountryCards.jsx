@@ -4,15 +4,25 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-function CountryCards({ cards }) {
+function CountryCards({ cards, searchValue }) {
   return (
     <div>
       <Container>
         <Row>
-          {cards.map((ele, index) => (
+          {cards.filter((ele, index) => {
+            return searchValue.toLowerCase() === ""
+              ? ele
+              : ele.name.common.toLowerCase().includes(searchValue);
+          })
+         .map((ele, index) => (
             <Col xs={12} sm={12} md={4} lg={4} xl={4}>
               <Card key={index} className="card">
-                <Card.Img variant="top" src={ele.flags.png} alt={ele.name.common} className="flag-image"/>
+                <Card.Img
+                  variant="top"
+                  src={ele.flags.png}
+                  alt={ele.name.common}
+                  className="flag-image"
+                />
                 <Card.Body>
                   <Card.Title>{ele.name.common}</Card.Title>
                 </Card.Body>

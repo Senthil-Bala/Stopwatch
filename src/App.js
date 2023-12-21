@@ -1,11 +1,10 @@
 import React from 'react';
 import "./App.css"
-import Stopwatch from './Components/StopWatch/Stopwatch';
-
+import CountryData from './Components/Country/CountryData';
 function App() {
   return (
     <div className='app'>
-      <Stopwatch/>
+      <CountryData/>
     </div>
   )
 }
