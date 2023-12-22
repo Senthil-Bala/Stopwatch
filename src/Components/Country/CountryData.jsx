@@ -1,32 +1,32 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import "./CountryData.css";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import CountryCards from "./CountryCards";
 import "./CountryData.css";
 
 function CountryData() {
   const [countryData, setCountryData] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true); // Set initial loading state to true
   const [errorMessage, setErrorMessage] = useState("");
-  const [search, setSearch] = useState('');
+  const [search, setsearch] = useState("");
 
   useEffect(() => {
     axios
       .get("https://restcountries.com/v3.1/all")
       .then((res) => {
+        console.log(res.data);
         setCountryData(res.data);
         setErrorMessage("");
       })
       .catch((error) => {
+        console.log(error);
         setErrorMessage(error.message);
       })
       .finally(() => {
-        setLoading(false);
+        setLoading(false); // Set loading to false after receiving the response (success or error)
       });
   }, []);
-
-  const handleSearch = (e) => {
-    setSearch(e.target.value);
-  };
 
   return (
     <div>
@@ -36,7 +36,7 @@ function CountryData() {
         type="text"
         placeholder="Search Your Country"
         value={search}
-        onChange={handleSearch}
+        onChange={(e) => setsearch(e.target.value)}
       />
       <hr />
       {loading ? (
@@ -49,5 +49,4 @@ function CountryData() {
     </div>
   );
 }
-
 export default CountryData;

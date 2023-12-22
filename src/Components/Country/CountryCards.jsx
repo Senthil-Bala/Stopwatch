@@ -1,19 +1,26 @@
 import React from "react";
+// import Card from "react-bootstrap/Card";
+// import Container from "react-bootstrap/Container";
+// import Row from "react-bootstrap/Row";
+// import Col from "react-bootstrap/Col";
 
 function CountryCards({ cards, searchValue }) {
-  const filteredCountries = cards.filter((country) => {
-    const countryName = country.name.common.toLowerCase();
-    return countryName.includes(searchValue.toLowerCase());
-  });
-
   return (
-    <div>
-      {filteredCountries.map((country, index) => (
-        <div className="image" key={index}>
-          <img src={country.flags.png} alt={country.name.common} />
-          <h2 className="text-white">{country.name.common}</h2>
+    <div className="containerStyle">
+      {cards.filter((ele, index) => {
+        return searchValue.toLowerCase() === "" ||
+          searchValue.toUpperCase() === ""
+          ? ele
+          : ele.name.common.toLowerCase().includes(searchValue) ||
+              ele.name.common.toUpperCase().includes(searchValue);
+      })
+      .map((ele,index)=>(
+        <div className="cardStyle" key={index}>
+          <img className="flag" src={ele.flags.png} alt={ele.name.common} />
+          <p className="mt-2" >{ele.name.common}</p>
         </div>
-      ))}
+      ))
+      }
     </div>
   );
 }
