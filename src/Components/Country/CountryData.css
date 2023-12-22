@@ -1,32 +1,16 @@
-.card{
-    width: 15rem;
-    height:10rem;
-    padding: 1.5rem;
-    margin: 1rem;
-    text-align: center;
-}
-
-.flag-image{
-    width: 5rem;
-    height: 7rem;
-}
-.error{
-    text-align: center;
-    color: yellow;
-    font-weight: bolder;
-}
-.loading{
-    text-align: center;
-    color: white;
-}
-#search{
-    text-align: center;
+.image {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    /* background-color: brown;  */
-    margin-left: 30vw;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    width: 40%;
-}
+    flex-direction: column;
+    align-items: center; /* Optional: Centers items horizontally */
+    margin-bottom: 20px; /* Optional: Adds space between containers */
+  }
+  
+  .image img {
+    width: 100px; /* Adjust image size as needed */
+    height: auto;
+  }
+  
+  .text-white {
+    color: white; /* Optional: Set text color */
+  }
+  
